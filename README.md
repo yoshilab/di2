@@ -25,14 +25,20 @@ AI (Artificial Intelligence: 人工知能) 技術の一つに、画像認識 (Im
 
 ## YOLOとは
 
-YOLO は You Only Look Once を略したもので、 深層学習（Deep Learning) による一般物体認識モデルである。
+YOLO は You Only Look Once を略したもので、Ultralytics が公開する深層学習（Deep Learning) による一般物体認識モデルである。
 
 物体認識のアルゴリズムとして、1ステージのものと2ステージのものに分けられる。2ステージのものは、まず対象の位置の検出を画像全体で行った後、検出されたそれぞれの対象について種類（内容）の識別を行うのに対し、1ステージのものは、一度をそれを行う。YOLOは1ステージで行うタイプのものである。
 
 
 # Windows 11 へのインストール
 
+Python の pip の機構（pip installs packages or pip installs python : Python にインストールされていない機能をダウンロードしインストールし追加する機能。こうした追加の機能のことをライブラリと呼んだり、簡単にダウンロード・インストールできるようまとめてあるものをパッケージと呼ぶ) で、YOLO をインストールすることができる。
 
+コマンド（Windows の PowerShell やコマンドプロンプト）で、下記を実行する。
+
+```
+pip install ultralytics
+```
 
 ```python
 import numpy as np
