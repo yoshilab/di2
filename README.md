@@ -29,6 +29,9 @@ YOLO は You Only Look Once を略したもので、Ultralytics が公開する�
 
 物体認識のアルゴリズムとして、1ステージのものと2ステージのものに分けられる。2ステージのものは、まず対象の位置の検出を画像全体で行った後、検出されたそれぞれの対象について種類（内容）の識別を行うのに対し、1ステージのものは、一度をそれを行う。YOLOは1ステージで行うタイプのものである。
 
+Ultralytics による YOLO の公式資料は、[https://docs.ultralytics.com/ja](https://docs.ultralytics.com/ja) にある。
+
+簡単なインストール方法、使い方は、[https://docs.ultralytics.com/quickstart/#use-ultralytics-with-python] (https://docs.ultralytics.com/quickstart/#use-ultralytics-with-python) にある。
 
 # Windows 11 へのインストール
 
