@@ -43,12 +43,69 @@ Python の pip の機構（pip installs packages or pip installs python : Python
 pip install ultralytics
 ```
 
+ネットワークの通信状況にもよるが、やや時間がかかるので、しばらく待つ。
+
+インストールが終わったら、自分のホームディレクトリの下に yolo11 というフォルダを作成し、そこへ移る。
+
+```
+ホームディレクトリ ＝ \\Users\ユーザ名 が通常なので、
+
+cd \\Users\ユーザ名 (既にそこに居る場合は良い)
+
+mkdir yolo11
+
+cd yolo11
+```
+
+エディタ (VS Code 等) を使い、新たにファイル predict.py を作成する。
+
+次にその内容を下記のようにする。
 ```python
-import numpy as np
+from ultralytics import YOLO
+from ultralytics import settings
+import cv2
+import time
+from datetime import datetime
+import os
 
-a = 0
-while a < 10:
-  a = a + 1
+# 古い認識内容のあるディレクトリを削除
+import shutil
+shutil.rmtree("runs\\detect\\predict")
 
-print(a)
+
+# Load a model
+model = YOLO("yolo11m.pt")
+
+
+
+# Webカメラを起動
+cap = cv2.VideoCapture(0)
+
+ret, frame = cap.read()
+results = model(frame, show=True, save=True, save_txt=True)
+print(results[0].names)
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # YOLOでフレームを解析、結果を画像とテキストで保存することを有効化
+    results = model(frame, show=True, save=True, save_txt=True)
+
+    # 現在時刻を取得
+    timenow = datetime.now()
+    # 20241030-085000 という形式にフォーマット変更
+    timenow_str = timenow.strftime("%Y%m%d-%H%M%S")
+    # ファイルのリネーム runs\detect\predict に image0.jpg と保存されるため
+    # ファイル名に時刻を付けて保存（リネーム）
+    os.rename("runs\\detect\\predict\\image0.jpg", "runs\\detect\\predict\\" + timenow_str + ".jpg")
+    os.rename("runs\\detect\\predict\\labels\\image0.txt", "runs\\detect\\predict\\labels\\" + timenow_str + ".txt")
+
+    # 10秒停止
+    time.sleep(10)
+    
+
+cap.release()
+cv2.destroyAllWindows()
 ```
