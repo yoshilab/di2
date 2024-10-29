@@ -131,4 +131,5 @@ python predict.py
 - YOLO のモデルを変更してみる。こちらが参考になる[https://docs.ultralytics.com/ja/tasks/detect/#models](https://docs.ultralytics.com/ja/tasks/detect/#models) や、  [https://docs.ultralytics.com/ja/models/yolo11/#supported-tasks-and-modes](https://docs.ultralytics.com/ja/models/yolo11/#supported-tasks-and-modes)。ファイル名の後ろについている、n, s, m, l, x は、それぞれ、nano, small, medium, large, extra のモデルサイズ（大きいほどメモリやCPUの計算時間をより使う）を表す。
 - 設定内容一覧 [https://docs.ultralytics.com/ja/usage/cfg/#predict-settings](https://docs.ultralytics.com/ja/usage/cfg/#predict-settings) でどのようなことが他にできるか考えてみる。
 - データをセーブする。上記ソースコード中に、既にコメントアウトする形でデータセーブ機能を入れてあるので、適宜外して使う。
-- これらをうまく使うことで、ビジネスや地域社会のおいて、どのようなことができるか班で話し合う。 
+- これらをうまく使うことで、ビジネスや地域社会のおいて、どのようなことができるか班で話し合う。
+- KUTLMS から、レポートを提出しなさい。A4 PDF 形式で、1-2ページ程度で、物体認識とはどのようなものか、YOLO はどのようなものか、何に応用できるかを書くこと。
