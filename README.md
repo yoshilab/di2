@@ -69,14 +69,12 @@ from datetime import datetime
 import os
 
 # 古い認識内容のあるディレクトリを削除
-import shutil
-shutil.rmtree("runs\\detect\\predict")
+#import shutil
+#shutil.rmtree("runs\\detect\\predict")
 
 
 # Load a model
-model = YOLO("yolo11m.pt")
-
-
+model = YOLO("yolo11n.pt")
 
 # Webカメラを起動
 cap = cv2.VideoCapture(0)
@@ -90,22 +88,39 @@ while cap.isOpened():
     if not ret:
         break
 
+    # YOLOでフレームを解析、結果を表示
+    results = model(frame, show=True)
+
     # YOLOでフレームを解析、結果を画像とテキストで保存することを有効化
-    results = model(frame, show=True, save=True, save_txt=True)
+    #results = model(frame, show=True, save=True, save_txt=True)
 
     # 現在時刻を取得
-    timenow = datetime.now()
     # 20241030-085000 という形式にフォーマット変更
-    timenow_str = timenow.strftime("%Y%m%d-%H%M%S")
     # ファイルのリネーム runs\detect\predict に image0.jpg と保存されるため
     # ファイル名に時刻を付けて保存（リネーム）
-    os.rename("runs\\detect\\predict\\image0.jpg", "runs\\detect\\predict\\" + timenow_str + ".jpg")
-    os.rename("runs\\detect\\predict\\labels\\image0.txt", "runs\\detect\\predict\\labels\\" + timenow_str + ".txt")
+    #timenow = datetime.now()
+    #timenow_str = timenow.strftime("%Y%m%d-%H%M%S")
+    #os.rename("runs\\detect\\predict\\image0.jpg", "runs\\detect\\predict\\" + timenow_str + ".jpg")
+    #os.rename("runs\\detect\\predict\\labels\\image0.txt", "runs\\detect\\predict\\labels\\" + timenow_str + ".txt")
 
     # 10秒停止
-    time.sleep(10)
+    #time.sleep(10)
     
 
 cap.release()
 cv2.destroyAllWindows()
 ```
+
+作成したら保存し、コマンドから下記を実行する。
+
+```
+python predict.py
+```
+
+終了は、コマンドの画面で Ctrl + c を押す。
+
+## 本日の課題
+
+上記プログラムを動作させ、下記を調べる。
+
+- 自分が動いたり、カメラを動かしたりしながら、動作画面を見て認識状況を調べる。
