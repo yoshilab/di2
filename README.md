@@ -31,7 +31,7 @@ YOLO は You Only Look Once を略したもので、Ultralytics が公開する�
 
 Ultralytics による YOLO の公式資料は、[https://docs.ultralytics.com/ja](https://docs.ultralytics.com/ja) にある。
 
-簡単なインストール方法、使い方は、[https://docs.ultralytics.com/quickstart/#use-ultralytics-with-python] (https://docs.ultralytics.com/quickstart/#use-ultralytics-with-python) にある。
+簡単なインストール方法、使い方は、[https://docs.ultralytics.com/quickstart/#use-ultralytics-with-python](https://docs.ultralytics.com/quickstart/#use-ultralytics-with-python) にある。
 
 # Windows 11 へのインストール
 
