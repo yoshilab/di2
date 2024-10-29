@@ -22,6 +22,9 @@ AI (Artificial Intelligence: 人工知能) 技術の一つに、画像認識 (Im
 
 物体認識のモデルの中で、比較的広く使われているものに、YOLO (You Only Look Once) がある。2024年10月現在の最新版は、2024年に公開された v11 である。
 
+## YOLOとは
+
+YOLO は You Only Look Once を略したもので、 深層学習（Deep Learning) による一般物体認識モデルである。
 
 ```python
 import numpy as np
