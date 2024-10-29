@@ -123,4 +123,8 @@ python predict.py
 
 上記プログラムを動作させ、下記を調べる。
 
-- 自分が動いたり、カメラを動かしたりしながら、動作画面を見て認識状況を調べる。
+- 自分が動いたり、カメラを動かしたりしながら、動作画面を見て認識状況を調べる。例えば、誤認識がどの程度起きているか、等。
+- YOLO のモデルを変更してみる。こちらが参考になる[https://docs.ultralytics.com/ja/tasks/detect/#models](https://docs.ultralytics.com/ja/tasks/detect/#models) や、  [https://docs.ultralytics.com/ja/models/yolo11/#supported-tasks-and-modes](https://docs.ultralytics.com/ja/models/yolo11/#supported-tasks-and-modes)。ファイル名の後ろについている、n, s, m, l, x は、それぞれ、nano, small, medium, large, extra のモデルサイズ（大きいほどメモリやCPUの計算時間をより使う）を表す。
+- 設定内容一覧 [https://docs.ultralytics.com/ja/usage/cfg/#predict-settings](https://docs.ultralytics.com/ja/usage/cfg/#predict-settings) でどのようなことが他にできるか考えてみる。
+- データをセーブする。上記ソースコード中に、既にコメントアウトする形でデータセーブ機能を入れてあるので、適宜外して使う。
+- これらをうまく使うことで、ビジネスや地域社会のおいて、どのようなことができるか班で話し合う。 
